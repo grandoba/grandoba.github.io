@@ -5,7 +5,7 @@
 ## TODO
 * add a projects page? (kakao, paint project etc,etc)
 * posts are in html format, notion.so -> export markdown -> put in website
-* 
+* add math support 
 
 ## [Start Bootstrap - Clean Blog Jekyll](https://startbootstrap.com/template-overviews/clean-blog-jekyll/) - Official Jekyll Version
 
