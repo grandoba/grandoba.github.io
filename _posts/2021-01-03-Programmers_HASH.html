@@ -11,5 +11,40 @@ background: '/img/posts/thought-catalog-505eectW54k-unsplash.jpg'
 <h2 class="section-heading">'dictionary' is the hash table type for Python</h2>
 #data_type #index #list 
 <!-- how do i put a code block here?  -->
+<!-- https://html.com/tags/code/#:~:text=The%20element%20is%20used,presenting%20blocks%20of%20computer%20code. -->
+
 <!-- how do i do a hash tag system like that up there? -->
 
+def solution(clothes):
+    thisdict = {}
+    for c_item, c_type in clothes:
+        if c_type not in thisdict:
+            thisdict[c_type] = [c_item]
+        else:
+            thisdict[c_type].append(c_item)
+    
+    print(thisdict)
+    
+    c = 1
+    for keys in thisdict:
+        c = c*(len(thisdict[keys])+1)
+    answer = c - 1
+    return answer
+    # ht = {}
+    # print(clothes)
+    
+#     unique_types = []
+#     for c_item, c_type in clothes:
+#         # ht[c_item] = c_type
+#         if c_type not in unique_types:
+#             unique_types.append(c_type)
+#     cal = 1;
+    
+#     for all_types in unique_types:
+#         cc = sum([row.count(all_types) for row in clothes])
+#         cal = cal * (cc+1)
+#         print(all_types, cc)
+        
+#     answer = cal-1
+#     if answer == 0:
+#         return 1    
