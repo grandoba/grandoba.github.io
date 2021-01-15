@@ -1,0 +1,19 @@
+---
+layout: post
+title: "Why does SLAM have to be so Labor intensive? Why can't we use Learning to solve them?"
+subtitle: "More precisely, Backpropagation is great at estimation. Could they replace EKFs?"
+date: 2021-01-03 22:22:22 -0400
+background: '/img/posts/thought-catalog-505eectW54k-unsplash.jpg'
+---
+
+<p>I came across a simple thought: If Extended Kalman Filters (EKF) can find the maximum a posterior probability of a system, it's an optimization problem which Artificial Neural Networks (ANN) are there for. So could an EKF be replaced with an ANN to make SLAM problem more like the popular neural nets these days? If it could, how would it be done? </p>
+    
+<p>So I begin searching the web. With 30 minutes of searching, the closest thing I could get to answer this question came from two papers: "Training Multilayer Perceptrons with the Extended Kalman Filter Algorithm" by Sharad Singhal and Lance Wu who were researchers at Bell Communications Research and "Comparative ANalysis of Backpropagation and the Extended Kalman Filter for Training Mulilayer Perceptrons" by Dennis W. Ruck, a professor at a US airforce tech university. </p>
+
+<p>The first paper, which I will note as [1] from now on, was the first to propose such idea in 1990, 30 years from now. This is a paper accepted at NIPS, a highly regarded conference for Learning. Anyways I haven't read much of it in detail but it formulates a MultiLayer Perceptrons (MLP) problem with an EKF. It solves the XOR problem, a problem that couldn't be solved with only 1 layer of a MLP, but could only be achieved with more than 2 layers. More detail of the signficance on the problem with the XOR problem and MLPs could be found in multiple source on the web. (go ahead and look for it if you are interested). 30 years have passed since 1990 and as an amateur in Learning, I can't really think of a way to incorporate this paper into nowadays algorithms with its sofistications and complexity with the explosion of related papers and algorithms. But, I came across the second paper which gave me a hint to why I haven't seen any links between EKFs and Learning.</p>
+
+<p>The second paper, again which will be noted as [2] from now on, directly - or maybe not since I'm not that much of an expert in either fields - debunks why the use of EKFs were not considered in Learning. The MLP problem could be solved with a lot fewer iterations with EKFs, which was the main finding in [1]. However, [2] proved that the EKF approach weight and threshold estimation is 3 orders more expensive in FLOPS (floating-point operations) than the currently popular Backpropagation method. [2] compares EKFs with Backpropagation and Momentum. The study shows that EKFs are not worth it. So maybe this paper is why there were no more approaches in implementing EKFs for MLP and, furthermore, any more Learning approaches. I'll try to go more in depth if i find any more evidence. Anyways there weren't any approaches in recent times - or I'm severly lacking in searching the web - that have tried to patch these two ideas together. </p>
+
+<p>So EKFs for MLP and Learning suck. But, what about the other way around? In other words, how about using Backpropagation for EKFs instead? [2] says that Backpropagation is a degenerate case of EKFs. Then would the Backpropagation method be insufficient to solve the estimation problems for popular EKF problems? We need to find out. More searching the web is also needed. </p>
+ 
+<p> Also, as EKFs are the basis of Simultaneous Localization and Mapping (SLAM), what are the possibilities that could make SLAM better? In a survey paper of SLAM, "Past, Present, and Future of Simultaneous Localization And Mapping: Towards the Robust-Perception Age," the "automatic parameter tuning" problem is an open problem that seems to have stifiled even the great minds. Would this question of fusing Learning with EKF bring any hopeful answers to solve SLAM? We would have to find out.</p>
