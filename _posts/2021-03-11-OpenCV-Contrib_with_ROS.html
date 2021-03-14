@@ -1,21 +1,51 @@
 ---
 layout: post
 title: "Install OpenCV-contrib for ROS"
-subtitle: "Basic OpenCV is provided when installing ROS, but how to additionally install OpenCV-contrib"
+subtitle: "OpenCV is provided when installing ROS, but how do you install additional functionalities from OpenCV-contrib?"
 date: 2021-03-11 22:22:22 -0400
 <!-- background: '/img/posts/thought-catalog-505eectW54k-unsplash.jpg' -->
 ---
 
-<p> Basic Instructions on how to additionally install OpenCV-contrib for ROS </p>
+<p> System: Ubuntu18.04</p>
 
-<p> Problem Statement: OpenCV is provided already by ROS, but it's hard to install OpenCV-contrib</p>
+<p> This is a very basic instructions on how to install OpenCV-contrib for ROS </p>
+
+<p> Although OpenCV already provides a handful of wonderful functions, the OpenCV-contrib has many more functions that deserves a try. </p>
+
+<p> While it may not be so much of a problem to install OpenCV and OpenCV-contrib, it seems to be more complicated when you are trying to install OpenCV-contrib if you already have OpenCV installed because ROS already has installed it for you.</p>
 
 <p> Why is it difficult? </p>
 
-<p> OpenCV and OpenCV-contrib are compiled together</p>
+<p> The <a href="https://docs.opencv.org/master/d7/d9f/tutorial_linux_install.html">OpenCV-contrib install guide</a> assumes that OpenCV is not installed. So for the common newbies to Linux and cmake, building OpenCV-contrib has just to many unknowns. Should you uninstall OpenCV and install OpenCV with contrib?</p>
 
-<p> ROS installs OpenCV already, and uninstalling OpenCV may create problems. </p>
+<p> ROS installs OpenCV by itself, and uninstalling OpenCV may create problems. So this may be a dangerous route to take.</p>
 
-<p> HOW TO DO IT? </p>
+<p> Then what is the proper way? </p>
 
-<p> THIS POST SHOWS HOW TO DO IT </p>
+<p> The overall method is to install OpenCV and OpenCV-contrib version 3.2 (since ROS melodic for Ubuntu 18.04 installs version 3.2). But we are going to overwrite the OpenCV folder that was created by ROS. For my case, I have my OpenCV installed in "/usr/include/opencv2." So keeping this in mind, we can start the install process.</p>
+
+<p> I recommend using the cmake-gui since it is more intuitive with the install options. </p>
+
+	<b>sudo apt install cmake-gui</b>
+
+<p> After selecting where the source code and the build directory is - usually the build file is just below the source file "../source/build" - you can select how you want to configure the options for your build. We are going to check the following options: </p>
+
+<p> 1. CMAKE_BUILD_TYPE -> Release </p>
+<p> 2. OPENCV_EXTRA_MODULES_PATH -> PATH_TO_YOUR_DOWNLOAD_FILE/opencv_contrib-3.2.0/modules </p>
+<p> 3. CMAKE_INSTALL_PREFIX -> /usr/ 
+If you have OpenCV installed in the /usr/include/ space, not the /usr/local/ space, you will proceed as /usr/ </p>
+<p> 4. ENABLE_PRECOMPILED_HEADERS -> OFF (untick) 
+According to <a href="linkref">this reference</a>, if this option is not off, the compile will report back errors.</p>
+
+
+<p> Now, click "Generate" and the build is done.</p>
+
+<p> Then, compile and install OpenCV</p>
+
+	<b> cd PATH_TO/opencv-3.2.0/build </b>
+	<b> make </b>
+	<b> sudo make install </b>
+
+<p> Now you are done! </p>
+
+<p> <a name="linkref">This</a> is the reference where I got to solve this problem. https://www.programmersought.com/article/83872474263/ </p>
