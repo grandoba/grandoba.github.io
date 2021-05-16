@@ -1,0 +1,42 @@
+---
+layout: post
+title: "Arrays For Life in C++, Python, Matlab"
+subtitle: "All Approaches About Arrays"
+date: 2021-05-15 22:22:22 -0400
+
+## Addition 
+
+
+
+
+<p> Heaps are not referring to the computer memory allocated area. It is a tree structures where each node has children of smaller value.  like this perhaps as shown below. (draw all basic structures of heaps). </p>
+
+### C++ STL heaps 
+
+<p> In C++, they are binary max heaps. 
+* Binary: 2 children per node 
+* Max: the larger the value the closer to the root
+
+So a binary tree structure (like this image) would turn into a std::vector<int> (like this image).
+</p>
+
+<p> http://www.cplusplus.com/reference/algorithm/push_heap/
+In the link above, there is no object created called `std::heap<int>` or anything like that. 
+
+Q. What does this mean? 
+A. A heap is a vector type just sorted in descending order (largest comes first) 
+
+Q. If heaps are just in descending order, what is the time complexity of inserint a value in the middle? 
+A. Not good probably? right?
+
+Q. `is_heap()` function checks whether the container is heap or not.  (check this (link)[https://www.geeksforgeeks.org/heap-using-stl-c/])
+A. Since the heaps aren't a separate class, this is just checking if the vector follows a max heap structure which is just sorting a vector in descending order, right?
+
+Q. `is_heap_until()` function returns the position of where the container no longer follows the heap rule: descending order (or ascending). Then, what is a good use case of this?
+A.  </p>
+
+
+references
+* [geeksforgeeks-heap](https://www.geeksforgeeks.org/heap-using-stl-c/)
+* [cplusplus.com](http://www.cplusplus.com/reference/algorithm/make_heap/)
+* [programmers.co.kr - heap code test 1](https://programmers.co.kr/learn/courses/30/lessons/42627?language=cpp)
