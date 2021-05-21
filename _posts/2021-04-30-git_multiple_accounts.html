@@ -6,23 +6,46 @@ date: 2021-04-30 22:22:22 -0400
 background: '/img/jessica-yong-I9gMXHcqbTs-unsplash.jpg'
 ---
 
-<h2 class="section-heading">5 Steps</h2>
+<h2 class="section-heading">Step 0: Understand ssh-key</h2>
+<p>First, I believe it's critical to know ... I mean really understand how ssh-keys work. You can skip this step if you understand the ssh-key concept. Also, if you know how to create ssh-keys and authenticate them on github, go directly to step 3.</p>
+
+<p> <code>ssh</code> is a remote access method. So, a ssh-key is a key to remotely access something. Having this key let's the remote computer or server know that it is you who is accessing it.</p>
+
+<h2 class="section-heading">Step 1: Generate ssh-key</h2>
+<p>First, we need to create a ssh-key. Follow Steps 1 to 4 from this link: <u><a href="Generating a new SSH key">"Generating a new SSH key"</a></u>. Note that if you are working on your personal computer, you just need to press "enter" after step 2 in the link. </p>
+<p> Let me explain what this step does. You are creating a ssh-key and when you are done creating your key, you can check that it's made in "~/.ssh" repository.</p>
+
+<p>You can see that you have two files created: "ed25519" and "ed25519.pub". You can change their names however you want, e.g. as shown below.</p>
+
+<img src="/home/suminee/gits/grandoba.github.io/img/posts/210430_git_multiple_ssh/Screenshot from 2021-05-21 12-34-07.png" alt="terminal image">
+<span class="caption text-muted">Rename the files however you want</span>
+
+<h2 class="section-heading">Step 2: Authenticate ssh-key in server(github)</h2>
+<p>Now that we made the key, we need to make sure our remote server (e.g. github, computer, etc) acknowledges this key. Metamorphically speaking, since we made the key, now we are forging a lock that accepts this key.</p>
+
+<p>Just follow <u><a href="https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account">this link</a></u></p>
+
+<h2 class="section-heading">Step 3</h2>
+<p>If you already have a ssh-key in "~/.ssh" directory, change its name so it isn't "ed25519" as shown in the image above.</p>
 
 
-**Step 1: **
 
-<p> 5 steps </p>
+<h2 class="section-heading">Step 4</h2>
 
-## What I didn't know
+<h2 class="section-heading">Step 5</h2>
+
+
+
+
 <p> When you are git cloning, don't forget to change the ssh git url as shown in step 3 of the `most useful one` reference.</p>
 
 
 <b>references</b>
 <ul>
   <li><u><a href="https://xiaolishen.medium.com/use-multiple-ssh-keys-for-different-github-accounts-on-the-same-computer-7d7103ca8693">most useful one</a></u></li>
-  <li><u><a href="https://gist.github.com/jexchan/2351996">other_1</a></u></li>
-  <li><u><a href="https://mygumi.tistory.com/96">other_2</a></u></li>
-  <li><u><a href="https://gist.github.com/oanhnn/80a89405ab9023894df7">other_3</a></u></li>
-  <li><u><a href="https://medium.com/@trionkidnapper/ssh-keys-with-multiple-github-accounts-c67db56f191e">other_4</a></u></li>
-  <li><u><a href="https://www.freecodecamp.org/news/manage-multiple-github-accounts-the-ssh-way-2dadc30ccaca/">other_5</a></u></li>
+  <li><u><a href="https://gist.github.com/jexchan/2351996">other 1</a></u></li>
+  <li><u><a href="https://mygumi.tistory.com/96">other 2</a></u></li>
+  <li><u><a href="https://gist.github.com/oanhnn/80a89405ab9023894df7">other 3</a></u></li>
+  <li><u><a href="https://medium.com/@trionkidnapper/ssh-keys-with-multiple-github-accounts-c67db56f191e">other 4</a></u></li>
+  <li><u><a href="https://www.freecodecamp.org/news/manage-multiple-github-accounts-the-ssh-way-2dadc30ccaca/">other 5</a></u></li>
 </ul>
