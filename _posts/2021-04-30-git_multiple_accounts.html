@@ -6,6 +6,9 @@ date: 2021-04-30 22:22:22 -0400
 background: '/img/jessica-yong-I9gMXHcqbTs-unsplash.jpg'
 ---
 
+<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?autoload=true&amp;skin=desert&amp" defer=""></script>
+
+
 <h2 class="section-heading">Step 0: Understand ssh-key</h2>
 <p>First, I believe it's critical to know ... I mean really understand how ssh-keys work. You can skip this step if you understand the ssh-key concept. Also, if you know how to create ssh-keys and authenticate them on github, go directly to step 3.</p>
 
@@ -19,20 +22,34 @@ background: '/img/jessica-yong-I9gMXHcqbTs-unsplash.jpg'
 
 <img src="/home/suminee/gits/grandoba.github.io/img/posts/210430_git_multiple_ssh/Screenshot from 2021-05-21 12-34-07.png" alt="terminal image">
 <span class="caption text-muted">Rename the files however you want</span>
+<p>P.S. ignore the "known_host" file, it will be created automatically later.</p>
 
 <h2 class="section-heading">Step 2: Authenticate ssh-key in server(github)</h2>
 <p>Now that we made the key, we need to make sure our remote server (e.g. github, computer, etc) acknowledges this key. Metamorphically speaking, since we made the key, now we are forging a lock that accepts this key.</p>
 
 <p>Just follow <u><a href="https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account">this link</a></u></p>
 
-<h2 class="section-heading">Step 3</h2>
+<h2 class="section-heading">Step 3: Repeat step 1 and 2 for the other github account</h2>
 <p>If you already have a ssh-key in "~/.ssh" directory, change its name so it isn't "ed25519" as shown in the image above.</p>
 
+<p>Now follow steps 1 and 2, to create a new ssh-key and authenticate it in the other github account.</p>
+
+<h2 class="section-heading">Step 4: </h2>
+<p> Now, we create a config file in "~/.ssh" directory</p>
+
+<div class='box'>
+  <pre class="prettyprint lang-bash">
+#config
+
+</pre>
+</div>
 
 
-<h2 class="section-heading">Step 4</h2>
+<h2 class="section-heading">Step 5: how to edit ssh cloning link</h2>
 
-<h2 class="section-heading">Step 5</h2>
+<p>When you are using two ssh-keys, we need to do "git clone" in a different mannar. </p>
+
+<p>Clone by editing this link, </p>
 
 
 
