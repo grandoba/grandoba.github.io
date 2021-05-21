@@ -13,52 +13,53 @@ date: 2021-05-17 22:22:22 -0400
 
 <div class='box'>
     <pre class="prettyprint lang-cpp">
-  #include &ltiostream&gt
+#include &ltiostream&gt
 
-  int method1(){
-      // get two inputs separated by space
-      int a,b;
-      std::cin&gt&gta&gt&gtb;
-      std::cout&lt&lt"method 1: "&lt&lta&lt&lt" "&lt&ltb&lt&ltstd::endl;
-  }
-  int method2(){
-      // get two inputs separated by space
-      int a;
-      scanf("%d",&ampa);
-      printf("%d\n",a);
-  }
-  int method3(){
-    // get only one input out of two
+int method1(){
+    // get two inputs separated by space
+    int a,b;
+    std::cin&gt&gta&gt&gtb;
+    std::cout&lt&lt"method 1: "&lt&lta&lt&lt" "&lt&ltb&lt&ltstd::endl;
+}
+int method2(){
+    // get two inputs separated by space
     int a;
-    scanf("%*d %d",&ampa);
+    scanf("%d",&ampa);
     printf("%d\n",a);
 }
-  int main(){
-    method1();
-    method2();
-    method3();
-  }</pre>
+int method3(){
+  // get only one input out of two
+  int a;
+  scanf("%*d %d",&ampa);
+  printf("%d\n",a);
+}
+
+int main(){
+  method1();
+  method2();
+  method3();
+}</pre>
   </div>
 
 
 <p> Heaps are not referring to the computer memory allocated area. It is a tree structures where each node has children of smaller value.  like this perhaps as shown below. (draw all basic structures of heaps). </p>
 
-### C++ STL heaps 
+### C++ STL heaps
 
-<p> In C++, they are binary max heaps. 
-* Binary: 2 children per node 
+<p> In C++, they are binary max heaps.
+* Binary: 2 children per node
 * Max: the larger the value the closer to the root
 
 So a binary tree structure (like this image) would turn into a std::vector<int> (like this image).
 </p>
 
 <p> http://www.cplusplus.com/reference/algorithm/push_heap/
-In the link above, there is no object created called `std::heap<int>` or anything like that. 
+In the link above, there is no object created called `std::heap<int>` or anything like that.
 
-Q. What does this mean? 
-A. A heap is a vector type just sorted in descending order (largest comes first) 
+Q. What does this mean?
+A. A heap is a vector type just sorted in descending order (largest comes first)
 
-Q. If heaps are just in descending order, what is the time complexity of inserint a value in the middle? 
+Q. If heaps are just in descending order, what is the time complexity of inserint a value in the middle?
 A. Not good probably? right?
 
 Q. `is_heap()` function checks whether the container is heap or not.  (check this (link)[https://www.geeksforgeeks.org/heap-using-stl-c/])
