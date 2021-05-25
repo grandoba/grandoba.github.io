@@ -8,6 +8,9 @@ background: '/img/roman-synkevych-vXInUOv1n84-unsplash.jpg'
 
 <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?autoload=true&amp;skin=desert&amp" defer=""></script>
 
+
+<!-- --------------------------------------------------------- -->
+<!-- --------------------------------------------------------- -->
 <h2 class="section-heading">Formatted Input Streams </h2>
 
 <p> Getting inputs can take a lot of forms. But if you are going to take a few inputs of a certain number of words separated by spaces, perhaps this is the best way to do so. </p>
@@ -29,19 +32,24 @@ int method2(){
     printf("%d %d\n",a,b);
 }
 int method3(){
-  // get only one input out of two
-  int a;
-  scanf("%*d %d",&ampa);
-  printf("%d\n",a);
+    // get only one input out of two
+    int a;
+    scanf("%*d %d",&ampa);
+    printf("%d\n",a);
 }
 
 int main(){
-  method1();
-  method2();
-  method3();
+    method1();
+    method2();
+    method3();
 }</pre>
   </div>
 
+
+
+
+<!-- --------------------------------------------------------- -->
+<!-- --------------------------------------------------------- -->
 <h2 class="section-heading">Smart Loops</h2>
 
 <p> The basics are for "for loops" and "while loops" are method 1 and method 2  </p>
@@ -51,57 +59,66 @@ int main(){
 #include &ltiostream&gt
 
 int method1(){
-  // Most Basic For Loop
-  for(int i=0; i&lt7; i++){
-    printf("%d ",i);
-  }
-  // result: "0 1 2 3 4 5 6 "
+    // Most Basic For Loop
+    for(int i=0; i&lt7; i++){
+        printf("%d ",i);
+    }
+    // result: "0 1 2 3 4 5 6 "
 }
 
 int method2(){
-  // Most Basic for while loop
-  int m=7;
-  int i=0;
-  while(i &lt m){
-    printf("%d ",i);
-    i++;
-  }
-  // result: "0 1 2 3 4 5 6 "
+    // Most Basic for while loop
+    int m=7;
+    int i=0;
+    while(i &lt m){
+        printf("%d ",i);
+        i++;
+    }
+    // result: "0 1 2 3 4 5 6 "
 }
 
 int main(){
-  method1();
-  method2();
+    method1();    
+    method2();
 }</pre>
   </div>
 
-  <p>Now, we demonstrate ingenious ways to utilize loops!</p>
+<p>Now, we demonstrate ingenious ways to utilize loops!</p>
+
+
 <div class='box'>
     <pre class="prettyprint lang-cpp">
 #include &ltiostream&gt
 
 int method1(){
-  // Most Basic For Loop
-  for(int i=0; i&lt7; i++){
-    printf("%d ",i);
-  }
-  // result: "0 1 2 3 4 5 6 "
+    // Most Basic For Loop
+    for(int i=0; i&lt7; i++){
+       printf("%d ",i);
+    }
+    // result: "6 5 4 3 2 1 0 "
 }
 
-int method2(){
-  // Most Basic for while loop
-  int m=7;
-  int i=0;
-  while(i &lt m){
-    printf("%d ",i);
-    i++;
-  }
-  // result: "0 1 2 3 4 5 6 "
+int method2_0(){
+    int m=7;
+    while(m--){ // condition (m != 0)  checked here
+        printf("%d ",m);
+    }
+    // result: "6 5 4 3 2 1 0 "
+}
+
+int method2_1(){
+    int m=7;
+    while(--m){ // condition (m-1 != 0)  checked here
+        printf("%d ",m);
+    }
+    // result: "6 5 4 3 2 1 "
+    // conclusion: while condition runs while the condition is not equal to 0.
 }
 
 int main(){
-  method1();
-  method2();
+    method1();
+    method2_0();
+    method2_1();
 }</pre>
   </div>
 

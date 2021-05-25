@@ -15,14 +15,14 @@ background: '/img/jessica-yong-I9gMXHcqbTs-unsplash.jpg'
 <p> <code>ssh</code> is a remote access method. So, a ssh-key is a key to remotely access something. Having this key let's the remote computer or server know that it is you who is accessing it.</p>
 
 <h2 class="section-heading">Step 1: Generate ssh-key</h2>
-<p>First, we need to create a ssh-key. Follow Steps 1 to 4 from this link: <u><a href="Generating a new SSH key">"Generating a new SSH key"</a></u>. Note that if you are working on your personal computer, you just need to press "enter" after step 2 in the link. </p>
+<p>First, we need to create a ssh-key. Follow Steps 1 to 4 from this link: <u><a href="https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent#generating-a-new-ssh-key">"Generating a new SSH key"</a></u>. Note that if you are working on your personal computer, you just need to press "enter" after step 2 in the link. </p>
 <p> Let me explain what this step does. You are creating a ssh-key and when you are done creating your key, you can check that it's made in "~/.ssh" repository.</p>
 
 <p>You can see that you have two files created: "ed25519" and "ed25519.pub". You can change their names however you want, e.g. as shown below.</p>
 
 <img src="/img/posts/210430_git_multiple_ssh/Screenshot from 2021-05-21 12-34-07.png" alt="terminal image">
 <span class="caption text-muted">Rename the files however you want</span>
-<p>P.S. ignore the "known_host" file, it will be created automatically later.</p>
+<p>P.S. ignore the "known_host" file.</p>
 
 <h2 class="section-heading">Step 2: Authenticate ssh-key in server(github)</h2>
 <p>Now that we made the key, we need to make sure our remote server (e.g. github, computer, etc) acknowledges this key. Metamorphically speaking, since we made the key, now we are forging a lock that accepts this key.</p>
