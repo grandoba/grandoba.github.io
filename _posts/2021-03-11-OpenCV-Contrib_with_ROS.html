@@ -5,7 +5,18 @@ subtitle: "OpenCV is provided when installing ROS, but how do you install additi
 date: 2021-03-11 22:22:22 -0400
 background: '/img/posts/thought-catalog-505eectW54k-unsplash.jpg'
 ---
+<!-- 
+	* Things to Add
+	- https://github.com/opencv/opencv_contrib/releases?after=3.3.1 여기서 다운 받는 다는 것 보여주기 
+	- cmake_gui 사진 찍은거 올리기 
+	- 설치할 때 opencv-3.2.0 도 다운 받아야한다. CMakeList.txt 때문에!! 
+	- cd opencv-3.2.0 && mkdir build
+	- cmake-gui 열고 code랑 build 위치 설정하고 나서 사진 찍기 (밑에가 비어있는거 보여주기)
+	- cmake-gui에서 configure 누르고나면 빨갛게 뜨는거 보여주기
+	- Search박스 쓰는거 표시하기! 하나씩 
+	- https://stackoverflow.com/questions/30992759/building-opencv-fail-on-qiana 이 에러도 뜸...
 
+ -->
 <p> System: Ubuntu18.04</p>
 
 <p> This is a very basic instructions on how to install OpenCV-contrib for ROS </p>
@@ -22,7 +33,7 @@ background: '/img/posts/thought-catalog-505eectW54k-unsplash.jpg'
 
 <p> Then what is the proper way? </p>
 
-<p> The overall method is to install OpenCV and OpenCV-contrib version 3.2 (since ROS melodic for Ubuntu 18.04 installs version 3.2). But we are going to overwrite the OpenCV folder that was created by ROS. For my case, I have my OpenCV installed in "/usr/include/opencv2." So keeping this in mind, we can start the install process.</p>
+<p> The overall method is to install OpenCV and OpenCV-contrib version 3.2 (since ROS melodic for Ubuntu 18.04 installs version 3.2). You're going to reinstall OpenCV entirely, but in the folder that ROS already installs for you. So, we are going to overwrite the OpenCV folder that was created by ROS. For my case, I have my OpenCV installed in "/usr/include/opencv2." So keeping this in mind, we can start the install process.</p>
 
 <p> I recommend using the cmake-gui since it is more intuitive with the install options. </p>
 
@@ -44,7 +55,9 @@ That's how I did it for mine. But this may not allow CUDA compatability. </p>
 <p> Then, compile and install OpenCV</p>
 
 	<b> cd PATH_TO/opencv-3.2.0/build </b>
+
 	<b> make </b>
+
 	<b> sudo make install </b>
 
 <p> Now you are done! </p>
